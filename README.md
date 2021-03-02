@@ -2,7 +2,7 @@
 GPS points will be predefined in ROS based robots to navigate to the destination avoiding obstacles.
 This package performs outdoor GPS waypoint navigation. It can navigate while building a map, avoiding obstacles, and can navigate continuously between each goal or stop at each goal. 
 
-This repo is made to run on a Custom Rover with Razor 9DOF IMU, ZED F9P (RTK2) GPS, and RPLidar A1 lidar.
+This repo is made to run on a Custom Rover with Razor 9DOF IMU, ZED F9P (RTK2) GPS, and RPLidar A1 lidar. The base station laptop is running Ubuntu 16.04 and the rover is running Ubuntu 16.04 on a Intel NUC 7I7DNBE.  
 
 ## Run the package
 
@@ -23,7 +23,7 @@ In another terminal, launch the joystick controller file:
 source devel/setup.bash
 roslaunch outdoor_waypoint_nav joy_launch_control.launch
 ```
-Press "LB" to start waypoint collection.
+Run the rover with the joystick. During the run, press "LB" to start waypoint collection. When the run is finished, press "RB" to start following waypoints. 
 
 ## Package Description
 This package uses a combination of the following packages:
