@@ -26,6 +26,7 @@ Run the rover with the joystick. During the run, press "LB" to start collecting 
 
 ## User Interface Demo
 We have used mapviz package to visualize the path and the cordinates. 
+
 Binary Install:
 ```
 sudo apt-get install ros-kinetic-mapviz \
@@ -68,3 +69,4 @@ The Navigation package within this repo includes the following custom nodes:
   I would like to acknowledge the contribution of 2 website which helped me while making this repo.
   1. https://github.com/nickcharron
   2. https://github.com/clearpathrobotics
+  3. https://github.com/swri-robotics
