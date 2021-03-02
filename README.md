@@ -22,22 +22,27 @@ This repo is made to run on a Rover with Razor 9DOF IMU, ZED F9P (RTK2) GPS, and
    - plot_gps_waypoints to save raw data from the GPS for plotting purposes.
    - gps_waypoint_mapping to combine waypoint navigation with Mandala Robotics' 3D mapping software for 3D mapping.
 
-3. Running the package:
+3. Running the package: <br>
+
 In your terminal, navigate to your catkin_ws's source (src) directory & run:
 ```
+cd catkin_ws/src
 git clone https://github.com/ArghyaChatterjee/GPS-waypoint-based-Autonomous-Navigation-in-ROS.git
 cd ..
 catkin_make
+```
+In that terminal, launch the navigation file:
+```
 source devel/setup.bash
-```
-In that terminal, launch the following file:
-```
 roslaunch outdoor_waypoint_nav outdoor_waypoint_nav.launch
 ```
 In another terminal, launch the joystick controller file:
 ```
+source devel/setup.bash
 roslaunch outdoor_waypoint_nav joy_launch_control.launch
 ```
+Press "LB" to start waypoint collection.
+
 # Gratitude
   I would like to acknowledge the contribution of 2 website which helped me while making this repo.
   1. https://github.com/nickcharron
