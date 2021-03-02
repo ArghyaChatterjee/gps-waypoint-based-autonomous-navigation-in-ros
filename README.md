@@ -15,12 +15,12 @@ catkin_make
 In that terminal, launch the navigation file:
 ```
 source devel/setup.bash
-roslaunch outdoor_waypoint_nav outdoor_waypoint_nav.launch
+roslaunch gps_waypoint_nav gps_waypoint_nav.launch
 ```
 In another terminal, launch the joystick controller file:
 ```
 source devel/setup.bash
-roslaunch outdoor_waypoint_nav joy_launch_control.launch
+roslaunch gps_waypoint_nav joy_launch_control.launch
 ```
 Run the rover with the joystick. During the run, press "LB" to start collecting waypoints. The waypoints will be saved inside 'points_outdoor.txt'. When the run is finished, press "RB" to start following waypoints. 
 
