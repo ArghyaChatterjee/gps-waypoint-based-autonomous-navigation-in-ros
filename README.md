@@ -8,7 +8,7 @@ This repo package was tested on a Custom Rover with Razor 9DOF IMU, ZED F9P (RTK
 In your terminal, navigate to your catkin_ws's source (src) directory & run:
 ```
 cd catkin_ws/src
-git clone https://github.com/ArghyaChatterjee/GPS-waypoint-based-Autonomous-Navigation-in-ROS.git
+git clone https://github.com/ArghyaChatterjee/gps-waypoint-based-autonomous-navigation-in-ros.git
 cd ..
 catkin_make
 ```
