@@ -23,7 +23,7 @@ In another terminal, launch the joystick controller file:
 source devel/setup.bash
 roslaunch outdoor_waypoint_nav joy_launch_control.launch
 ```
-Run the rover with the joystick. During the run, press "LB" to start waypoint collection. When the run is finished, press "RB" to start following waypoints. 
+Run the rover with the joystick. During the run, press "LB" to start collecting waypoints. The waypoints will be saved inside 'points_outdoor.txt'. When the run is finished, press "RB" to start following waypoints. 
 
 ## Package Description
 This package uses a combination of the following packages:
