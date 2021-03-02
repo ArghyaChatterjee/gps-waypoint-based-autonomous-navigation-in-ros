@@ -24,7 +24,22 @@ roslaunch gps_waypoint_nav joy_launch_control.launch
 ```
 Run the rover with the joystick. During the run, press "LB" to start collecting waypoints. The waypoints will be saved inside 'points_outdoor.txt'. When the run is finished, press "RB" to start following waypoints. 
 
-## UI Demo
+## User Interface Demo
+We have used mapviz package to visualize the path and the cordinates. 
+Binary Install:
+```
+sudo apt-get install ros-kinetic-mapviz \
+                       ros-kinetic-mapviz-plugins \
+                       ros-kinetic-tile-map \
+                       ros-kinetic-multires-image		       
+```
+Source Install:
+```
+cd catkin_ws/src
+git clone https://github.com/swri-robotics/mapviz.git
+rosdep install --from-paths src --ignore-src
+catkin_make
+```
 <p align="center">
     <img src="assets/gps_image.png", width="800">
 </p>
