@@ -71,3 +71,4 @@ The Navigation package within this repo includes the following custom nodes:
   2. https://github.com/clearpathrobotics
   3. https://github.com/swri-robotics
   4. https://github.com/danielsnider/follow_waypoints
+  5. https://github.com/ros-geographic-info
