@@ -27,14 +27,14 @@ Run the rover with the joystick. During the run, press "LB" to start collecting 
 ## User Interface Demo
 We have used mapviz package to visualize the path and the cordinates. 
 
-Binary Install:
+### Binary Install:
 ```
 sudo apt-get install ros-kinetic-mapviz \
                        ros-kinetic-mapviz-plugins \
                        ros-kinetic-tile-map \
                        ros-kinetic-multires-image		       
 ```
-Source Install:
+### Source Install:
 ```
 cd catkin_ws/src
 git clone https://github.com/swri-robotics/mapviz.git
@@ -49,13 +49,46 @@ In one terminal run:
 ```
 roscore
 ```
-In another terminal, launch the mapviz file using following command:
+In another terminal, launch the mapviz file. Your `mapviz.launch` file should look like this:
+```
+<launch>
+
+  <node pkg="mapviz" type="mapviz" name="mapviz"></node>
+
+  <node pkg="swri_transform_util" type="initialize_origin.py" name="initialize_origin" >
+    <param name="local_xy_frame" value="/map"/>
+    <param name="local_xy_origin" value="auto"/>
+    <!--<param name="local_xy_origin" value="swri"/>-->
+    <rosparam param="local_xy_origins">
+      [{ name: swri,
+         latitude: 29.45196669,
+         longitude: -98.61370577,
+         altitude: 233.719,
+         heading: 0.0},
+
+       { name: back_40,
+         latitude: 29.447507,
+         longitude: -98.629367,
+         altitude: 200.0,
+         heading: 0.0}]
+    </rosparam>
+    <remap from="fix" to="/navsat/fix"/>
+  </node>
+
+  <node pkg="tf" type="static_transform_publisher" name="swri_transform" args="0 0 0 0 0 0 /map /origin 100"  />
+
+</launch>
+```
+using following command:
 ```
 cd catkin_ws
 source devel/setup.bash
 roslaunch mapviz mapviz.launch
 ```
-In the panel, leave the 1st box (fixed frame "Map" and target frame "None") as it is, add tile_map and then add navsat plugin (select topic /navsat/fix). Perform it sequencially. Now, you need a sample bag file which will publish the gps in `/navsat/fix` topic. Download the rosbag from [here](https://advdataset2019.wixsite.com/urbanloco/hong-kong). Run the rosbag in another terminal:
+In the panel, leave the 1st box (fixed frame "Map" and target frame "None") as it is, add tile_map and then add navsat plugin (select topic /navsat/fix). Perform it sequencially. 
+
+### UI Testing:
+Now, you need a sample bag file which will publish the gps in `/navsat/fix` topic. Download the rosbag from [here](https://advdataset2019.wixsite.com/urbanloco/hong-kong). Run the rosbag in another terminal:
 ```
 rosbag play test2.bag
 ```
