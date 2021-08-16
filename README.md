@@ -41,6 +41,25 @@ git clone https://github.com/swri-robotics/mapviz.git
 rosdep install --from-paths src --ignore-src
 catkin_make
 ```
+Delete any previous configuration file that you have worked with. The sequence of plugins in your panel is vital as Mapviz draws its plugins in the order that they are listed in the plugin panel. If navsat is listed first, it will draw that first, and then it will draw the tile_map over that, so you would not be able to see any fixes.
+```
+sudo rm ~/.mapviz_config
+```
+In one terminal run:
+```
+roscore
+```
+In another terminal, launch the mapviz file using following command:
+```
+cd catkin_ws
+source devel/setup.bash
+roslaunch mapviz mapviz.launch
+```
+In the panel, leave the 1st box (fixed frame "Map" and target frame "None") as it is, add tile_map and then add navsat plugin (select topic /navsat/fix). Perform it sequencially. Now, you need a sample bag file which will publish the gps in `/navsat/fix` topic. Download the rosbag from [here](https://advdataset2019.wixsite.com/urbanloco/hong-kong). Run the rosbag in another terminal:
+```
+rosbag play test2.bag
+```
+
 <p align="center">
     <img src="assets/gps_image.png", width="800">
 </p>
