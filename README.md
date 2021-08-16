@@ -79,7 +79,7 @@ In another terminal, launch the mapviz file. Your `mapviz.launch` file should lo
 
 </launch>
 ```
-using following command:
+Use the following command to launch the `mapviz.launch` file:
 ```
 cd catkin_ws
 source devel/setup.bash
