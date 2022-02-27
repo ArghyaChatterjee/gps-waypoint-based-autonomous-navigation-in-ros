@@ -95,7 +95,7 @@ In the panel, leave the 1st box (fixed frame "Map" and target frame "None") as i
 #### Mapviz Testing:
 Now, you need a sample bag file which will publish the gps in `/navsat/fix` topic. Download the rosbag from [here](https://advdataset2019.wixsite.com/urbanloco/hong-kong). Run the rosbag in another terminal:
 ```
-rosbag play test2.bag
+rosbag play CA-20190828184706_blur_align.bag
 ```
 <p align="center">
     <img src="assets/mapviz_satellite.gif", width="800">
