@@ -101,9 +101,21 @@ rosbag play test2.bag
     <img src="assets/mapviz_satellite.gif", width="800">
 </p>
 
-### Rviz Satellite 
+### Rviz Satellite Package
+#### Source Install:
+```
+cd catkin_ws/src
+git clone https://github.com/nobleo/rviz_satellite.git
+catkin_make
+```
+Use the following command to launch the `rviz.launch` file:
+```
+cd catkin_ws
+source devel/setup.bash
+roslaunch rviz_satellite demo.launch
+```
 #### Rviz Satellite Testing:
-Now, you need a sample bag file which will publish the gps in `/navsat/fix` topic. Download the rosbag from [here](https://advdataset2019.wixsite.com/urbanloco/hong-kong). Run the rosbag in another terminal:
+You need a sample bag file which will publish the gps in `/navsat/fix` topic. Download the rosbag from [here](https://advdataset2019.wixsite.com/urbanloco/hong-kong). Run the rosbag in another terminal:
 ```
 rosbag play CA-20190828184706_blur_align.bag
 ```
@@ -137,3 +149,4 @@ The Navigation package within this repo includes the following custom nodes:
   3. https://github.com/swri-robotics
   4. https://github.com/danielsnider/follow_waypoints
   5. https://github.com/ros-geographic-info
+  6. https://github.com/nobleo/rviz_satellite
