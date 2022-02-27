@@ -122,6 +122,7 @@ rosbag play CA-20190828184706_blur_align.bag
 <p align="center">
     <img src="assets/rviz_satellite.gif", width="800">
 </p>
+
 ## Package Description
 This package uses a combination of the following packages:
 
