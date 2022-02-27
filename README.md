@@ -1,7 +1,7 @@
 # GPS-waypoint-based-Autonomous-Navigation-in-ROS
 GPS points will be predefined for the robot to navigate to the destination avoiding obstacles.
 
-This repo package was tested on a Custom Rover with Razor 9DOF IMU, ZED F9P (RTK2) GPS, and RPLidar A1 lidar. The base station laptop is running Ubuntu 16.04 and the rover is running Ubuntu 16.04 on an Nvidia Jetson TX2.  
+This repo package was tested on a Custom Rover with Razor 9DOF IMU, ZED F9P (RTK2) GPS, and RPLidar A1 lidar. The base station laptop is running Ubuntu 16.04 and the rover is running Ubuntu 16.04 on an Nvidia Jetson TX2. 
 
 ## Run the package
 
@@ -24,17 +24,22 @@ roslaunch gps_waypoint_nav joy_launch_control.launch
 ```
 Run the rover with the joystick. During the run, press "LB" to start collecting waypoints. The waypoints will be saved inside 'points_outdoor.txt'. When the run is finished, press "RB" to start following waypoints. 
 
+<p align="center">
+    <img src="assets/gps_image.png", width="800">
+</p>
+
 ## User Interface Demo
+### Mapviz package
 We have used mapviz package to visualize the path and the cordinates. 
 
-### Binary Install:
+#### Binary Install:
 ```
 sudo apt-get install ros-kinetic-mapviz \
                        ros-kinetic-mapviz-plugins \
                        ros-kinetic-tile-map \
                        ros-kinetic-multires-image		       
 ```
-### Source Install:
+#### Source Install:
 ```
 cd catkin_ws/src
 git clone https://github.com/swri-robotics/mapviz.git
@@ -87,16 +92,24 @@ roslaunch mapviz mapviz.launch
 ```
 In the panel, leave the 1st box (fixed frame "Map" and target frame "None") as it is, add tile_map and then add navsat plugin (select topic /navsat/fix). Perform it sequencially. 
 
-### UI Testing:
+#### Mapviz Testing:
 Now, you need a sample bag file which will publish the gps in `/navsat/fix` topic. Download the rosbag from [here](https://advdataset2019.wixsite.com/urbanloco/hong-kong). Run the rosbag in another terminal:
 ```
 rosbag play test2.bag
 ```
-
 <p align="center">
-    <img src="assets/gps_image.png", width="800">
+    <img src="assets/mapviz_satellite.gif", width="800">
 </p>
 
+### Rviz Satellite 
+#### Rviz Satellite Testing:
+Now, you need a sample bag file which will publish the gps in `/navsat/fix` topic. Download the rosbag from [here](https://advdataset2019.wixsite.com/urbanloco/hong-kong). Run the rosbag in another terminal:
+```
+rosbag play CA-20190828184706_blur_align.bag
+```
+<p align="center">
+    <img src="assets/rviz_satellite.gif", width="800">
+</p>
 ## Package Description
 This package uses a combination of the following packages:
 
