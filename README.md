@@ -156,9 +156,9 @@ If you want to convert /navsat/fix topic from gps sensor to /navsat/odom topic (
 - GPSD <[code](https://github.com/ros-drivers/gps_umd)> <[ROS Tutorial](https://wiki.ros.org/gpsd_client/Tutorials/)>
 
 ## Related Issues
-- https://answers.ros.org/question/332905/robot_localization-navsat-transform-node-does-not-publish/
-- https://answers.ros.org/question/236588/imu-and-gps-fusion-without-odom-robot_localization/
-- https://answers.ros.org/question/200071/how-to-fuse-imu-gps-using-robot_localization/
+- [Robot localization navsat transform node does not publish](https://answers.ros.org/question/332905/robot_localization-navsat-transform-node-does-not-publish/)
+- [Imu and GPS fusion without odom robot localization package](https://answers.ros.org/question/236588/imu-and-gps-fusion-without-odom-robot_localization/)
+- [How to fuse imu and gps using robot localization package](https://answers.ros.org/question/200071/how-to-fuse-imu-gps-using-robot_localization/)
 - [GPS navigation with mobile robot](https://question2738.rssing.com/chan-42656520/all_p5.html)
 
 ## Related Implementation to ROS robot
