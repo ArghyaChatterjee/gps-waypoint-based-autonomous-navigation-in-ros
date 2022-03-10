@@ -143,11 +143,16 @@ The Navigation package within this repo includes the following custom nodes:
    - plot_gps_waypoints to save raw data from the GPS for plotting purposes.
    - gps_waypoint_mapping to combine waypoint navigation with Mandala Robotics' 3D mapping software for 3D mapping.
 
+# Details Understanding of the package
+- [ROS Extra Class #2: How to use GPS to do autonomous robot navigation?](https://www.youtube.com/watch?v=cmOplaq8cHc)
+
 # Gratitude
-  I would like to acknowledge the contribution of 2 website which helped me while making this repo.
+  I would like to acknowledge the contribution of the websites which helped me while making this repo.
   1. https://github.com/nickcharron
   2. https://github.com/clearpathrobotics
   3. https://github.com/swri-robotics
   4. https://github.com/danielsnider/follow_waypoints
   5. https://github.com/ros-geographic-info
   6. https://github.com/nobleo/rviz_satellite
+
+
