@@ -28,6 +28,47 @@ Run the rover with the joystick. During the run, press "LB" to start collecting 
     <img src="assets/gps_image.png", width="800">
 </p>
 
+## Package Description
+This package uses a combination of the following packages:
+
+   - ekf_localization to fuse odometry data with IMU and GPS data.
+   - navsat_transform to convert GPS data to odometry and to convert latitude and longitude points to the robot's odometry coordinate system.
+   - GMapping to create a map and detect obstacles.
+   - move_base to navigate to the goals while avoiding obstacles 
+   - goals are set using recorded or inputted waypoints.
+
+## Node Description
+The Navigation package within this repo includes the following custom nodes:
+	
+   - gps_waypoint to read the waypoint file, convert waypoints to points in the map frame and then send the goals to move_base.
+   - gps_waypoint_continuous1 for continuous navigation between waypoints using one controller. 
+   - gps_waypoint_continuous2 for continuous navigation between waypoints using another seperate controller.
+   - collect_gps_waypoint to allow the user to drive the robot around and collect their own waypoints.	
+   - calibrate_heading to set the heading of the robot at startup and fix issues with poor magnetometer data.
+   - plot_gps_waypoints to save raw data from the GPS for plotting purposes.
+   - gps_waypoint_mapping to combine waypoint navigation with Mandala Robotics' 3D mapping software for 3D mapping.
+
+## Convert lattitude-longitude to local odometry message
+If you want to convert /navsat/fix topic from gps sensor to /navsat/odom topic (local cordinate frame), use these 2 packages directly:
+- Geonav Transform <[code](https://github.com/bsb808/geonav_transform)> <[ROS wiki](http://wiki.ros.org/geonav_transform)>
+- Geographic Info <[code](https://github.com/ros-geographic-info/geographic_info)> <[ROS wiki](http://wiki.ros.org/geographic_info)> <[website](http://library.isr.ist.utl.pt/docs/roswiki/navsat_odometry.html)> <[ROS wiki2](http://wiki.ros.org/navsat_odometry)>
+
+
+## Details Understanding of the package
+- [ROS Extra Class #2: How to use GPS to do autonomous robot navigation?](https://www.youtube.com/watch?v=cmOplaq8cHc)
+
+## GPS related ros drivers
+- GPSD <[code](https://github.com/ros-drivers/gps_umd)> <[ROS Tutorial](https://wiki.ros.org/gpsd_client/Tutorials/)>
+
+## Related Issues
+- [Robot localization navsat transform node does not publish](https://answers.ros.org/question/332905/robot_localization-navsat-transform-node-does-not-publish/)
+- [Imu and GPS fusion without odom robot localization package](https://answers.ros.org/question/236588/imu-and-gps-fusion-without-odom-robot_localization/)
+- [How to fuse imu and gps using robot localization package](https://answers.ros.org/question/200071/how-to-fuse-imu-gps-using-robot_localization/)
+- [GPS navigation with mobile robot](https://question2738.rssing.com/chan-42656520/all_p5.html)
+
+## Related Implementation to ROS robot
+- Robot Localization using GPS <[website](https://wiki.nps.edu/display/RC/Localization+using+GPS%2C+IMU+and+robot_localization)>
+
 ## User Interface Demo
 ### Mapviz package
 We have used mapviz package to visualize the path and the cordinates. 
@@ -123,46 +164,30 @@ rosbag play CA-20190828184706_blur_align.bag
     <img src="assets/rviz_satellite.gif", width="800">
 </p>
 
-## Package Description
-This package uses a combination of the following packages:
+### Rosboard Package
+#### Install
+#### Source Install:
+```
+cd catkin_ws/src
+git clone https://github.com/dheera/rosboard.git
+catkin_make
+```
+Use the following command to launch the `rviz.launch` file:
+```
+cd catkin_ws
+source devel/setup.bash
+rosrun rosboard rosboard_node
+```
+#### Rosbaord Testing:
+You need a sample bag file which will publish the gps in `/navsat/fix` topic. Download the rosbag from [here](https://advdataset2019.wixsite.com/urbanloco/hong-kong). Run the rosbag in another terminal:
+```
+rosbag play CA-20190828184706_blur_align.bag
+```
+Go to http://localhost:8888 (in case in a robot http://your-robot-ip:8888/) on your local browser and add the topic you want to visualize from top left menu. You should be able to visualize the topics.
+<p align="center">
+    <img src="assets/gps_nav.gif", width="800">
+</p>
 
-   - ekf_localization to fuse odometry data with IMU and GPS data.
-   - navsat_transform to convert GPS data to odometry and to convert latitude and longitude points to the robot's odometry coordinate system.
-   - GMapping to create a map and detect obstacles.
-   - move_base to navigate to the goals while avoiding obstacles 
-   - goals are set using recorded or inputted waypoints.
-
-## Node Description
-The Navigation package within this repo includes the following custom nodes:
-	
-   - gps_waypoint to read the waypoint file, convert waypoints to points in the map frame and then send the goals to move_base.
-   - gps_waypoint_continuous1 for continuous navigation between waypoints using one controller. 
-   - gps_waypoint_continuous2 for continuous navigation between waypoints using another seperate controller.
-   - collect_gps_waypoint to allow the user to drive the robot around and collect their own waypoints.	
-   - calibrate_heading to set the heading of the robot at startup and fix issues with poor magnetometer data.
-   - plot_gps_waypoints to save raw data from the GPS for plotting purposes.
-   - gps_waypoint_mapping to combine waypoint navigation with Mandala Robotics' 3D mapping software for 3D mapping.
-
-## Convert lattitude-longitude to local odometry message
-If you want to convert /navsat/fix topic from gps sensor to /navsat/odom topic (local cordinate frame), use these 2 packages directly:
-- Geonav Transform <[code](https://github.com/bsb808/geonav_transform)> <[ROS wiki](http://wiki.ros.org/geonav_transform)>
-- Geographic Info <[code](https://github.com/ros-geographic-info/geographic_info)> <[ROS wiki](http://wiki.ros.org/geographic_info)> <[website](http://library.isr.ist.utl.pt/docs/roswiki/navsat_odometry.html)> <[ROS wiki2](http://wiki.ros.org/navsat_odometry)>
-
-
-## Details Understanding of the package
-- [ROS Extra Class #2: How to use GPS to do autonomous robot navigation?](https://www.youtube.com/watch?v=cmOplaq8cHc)
-
-## GPS related ros drivers
-- GPSD <[code](https://github.com/ros-drivers/gps_umd)> <[ROS Tutorial](https://wiki.ros.org/gpsd_client/Tutorials/)>
-
-## Related Issues
-- [Robot localization navsat transform node does not publish](https://answers.ros.org/question/332905/robot_localization-navsat-transform-node-does-not-publish/)
-- [Imu and GPS fusion without odom robot localization package](https://answers.ros.org/question/236588/imu-and-gps-fusion-without-odom-robot_localization/)
-- [How to fuse imu and gps using robot localization package](https://answers.ros.org/question/200071/how-to-fuse-imu-gps-using-robot_localization/)
-- [GPS navigation with mobile robot](https://question2738.rssing.com/chan-42656520/all_p5.html)
-
-## Related Implementation to ROS robot
-- Robot Localization using GPS <[website](https://wiki.nps.edu/display/RC/Localization+using+GPS%2C+IMU+and+robot_localization)>
 
 # Gratitude
   I would like to acknowledge the contribution of the websites which helped me while making this repo.
@@ -172,5 +197,6 @@ If you want to convert /navsat/fix topic from gps sensor to /navsat/odom topic (
   - https://github.com/danielsnider/follow_waypoints
   - https://github.com/ros-geographic-info
   - https://github.com/nobleo/rviz_satellite
+  - https://github.com/dheera/rosboard
 
 
