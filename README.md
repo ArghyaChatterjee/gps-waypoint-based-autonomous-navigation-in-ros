@@ -143,16 +143,34 @@ The Navigation package within this repo includes the following custom nodes:
    - plot_gps_waypoints to save raw data from the GPS for plotting purposes.
    - gps_waypoint_mapping to combine waypoint navigation with Mandala Robotics' 3D mapping software for 3D mapping.
 
-# Details Understanding of the package
+## Convert lattitude-longitude to local odometry message
+If you want to convert /navsat/fix topic from gps sensor to /navsat/odom topic (local cordinate frame), use these 2 packages directly:
+- Geonav Transform <[code](https://github.com/bsb808/geonav_transform)> <[ROS wiki](http://wiki.ros.org/geonav_transform)>
+- Geographic Info <[code](https://github.com/ros-geographic-info/geographic_info)> <[ROS wiki](http://wiki.ros.org/geographic_info)> <[website](http://library.isr.ist.utl.pt/docs/roswiki/navsat_odometry.html)> <[ROS wiki2](http://wiki.ros.org/navsat_odometry)>
+
+
+## Details Understanding of the package
 - [ROS Extra Class #2: How to use GPS to do autonomous robot navigation?](https://www.youtube.com/watch?v=cmOplaq8cHc)
+
+## GPS related ros drivers
+- GPSD <[code](https://github.com/ros-drivers/gps_umd)> <[ROS Tutorial](https://wiki.ros.org/gpsd_client/Tutorials/)>
+
+## Related Issues
+- https://answers.ros.org/question/332905/robot_localization-navsat-transform-node-does-not-publish/
+- https://answers.ros.org/question/236588/imu-and-gps-fusion-without-odom-robot_localization/
+- https://answers.ros.org/question/200071/how-to-fuse-imu-gps-using-robot_localization/
+- [GPS navigation with mobile robot](https://question2738.rssing.com/chan-42656520/all_p5.html)
+
+## Related Implementation to ROS robot
+- Robot Localization using GPS <[website](https://wiki.nps.edu/display/RC/Localization+using+GPS%2C+IMU+and+robot_localization)>
 
 # Gratitude
   I would like to acknowledge the contribution of the websites which helped me while making this repo.
-  1. https://github.com/nickcharron
-  2. https://github.com/clearpathrobotics
-  3. https://github.com/swri-robotics
-  4. https://github.com/danielsnider/follow_waypoints
-  5. https://github.com/ros-geographic-info
-  6. https://github.com/nobleo/rviz_satellite
+  - https://github.com/nickcharron
+  - https://github.com/clearpathrobotics
+  - https://github.com/swri-robotics
+  - https://github.com/danielsnider/follow_waypoints
+  - https://github.com/ros-geographic-info
+  - https://github.com/nobleo/rviz_satellite
 
 
