@@ -5,8 +5,12 @@ This repo package was tested on a Custom Rover with Razor 9DOF IMU, ZED F9P (RTK
 
 ## Motivation
 This work was performed to participate in University Rover Challenge (URC) 2019 for Team Interplanetar (BUET Mars Rover Robotics Team). Special thanks goes to Daniel Snider for open sourcing his work:
+- ROS Rover <[code](https://github.com/danielsnider/ros-rover)>
 - Simple Drive <[code](https://github.com/danielsnider/simple_drive)> <[ROS Wiki](http://wiki.ros.org/simple_drive)>
 - Follow Waypoints <[code](https://github.com/danielsnider/follow_waypoints)> <[ROS Wiki](http://wiki.ros.org/follow_waypoints)>
+- GPS Goal <[code](https://github.com/danielsnider/gps_goal)> <[ROS Wiki](http://wiki.ros.org/gps_goal)>
+- ROS Offline Google Maps for MapViz <[code](https://github.com/danielsnider/MapViz-Tile-Map-Google-Maps-Satellite)>
+- Advanced Terminal Organization <[code1](https://github.com/teamr3/URC/blob/master/.tmuxinator.yml)> <[code2](https://github.com/teamr3/URC/blob/master/devstuff/dan/.tmuxinator.yml)>
 
 ## Run the package
 
