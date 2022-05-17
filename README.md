@@ -61,7 +61,9 @@ The Navigation package within this repo includes the following custom nodes:
 If you want to convert /navsat/fix topic from gps sensor to /navsat/odom topic (local cordinate frame), use these 2 packages directly:
 - Geonav Transform <[code](https://github.com/bsb808/geonav_transform)> <[ROS wiki](http://wiki.ros.org/geonav_transform)>
 - Geographic Info <[code](https://github.com/ros-geographic-info/geographic_info)> <[ROS wiki](http://wiki.ros.org/geographic_info)> <[website](http://library.isr.ist.utl.pt/docs/roswiki/navsat_odometry.html)> <[ROS wiki2](http://wiki.ros.org/navsat_odometry)>
-- LLA to UTM <[code](https://github.com/arpg/ROS-UTM-LLA)>
+- Lattitude, Longitude & Altitude to Pose Stamped <[code](https://github.com/arpg/ROS-UTM-LLA)>
+- Eagle Eye for GPS & IMU Fused Odometry <[code](https://github.com/MapIV/eagleye)> <[youtube](https://www.youtube.com/watch?v=u8Nan38BkDw)>
+- IMU GPS Localization: Using EKF to fuse IMU and GPS data <[code](https://github.com/ydsf16/imu_gps_localization)>
 
 
 ## Details Understanding of the package
