@@ -17,9 +17,9 @@ This work was performed to participate in University Rover Challenge (URC) 2019 
 In your terminal, navigate to your catkin_ws's source (src) directory & run:
 ```
 cd catkin_ws/src
-git clone https://github.com/ArghyaChatterjee/gps-waypoint-based-autonomous-navigation-in-ros.git
+git clone https://github.com/ArghyaChatterjee/gps-waypoint-based-autonomous-navigation-in-ros.git gps_waypoint_nav
 cd ..
-catkin_make
+catkin_make --only-pkg-with-deps gps_waypoint_nav
 ```
 In that terminal, launch the navigation file:
 ```
