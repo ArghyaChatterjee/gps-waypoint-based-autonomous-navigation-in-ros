@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <package>
-  <name>outdoor_waypoint_nav</name>
+  <name>gps_waypoint_nav</name>
   <version>0.0.0</version>
-  <description>The outdoor_waypoint_nav package</description>
+  <description>The gps_waypoint_nav package</description>
 
-  <maintainer email="nicholas.c.charron@gmail.com">Nick</maintainer>
+  <maintainer email="arghyame20buet@gmail.com">Arghya Chatterjee</maintainer>
 
   <license>BSD</license>
 
