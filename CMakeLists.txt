@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.3)
-project(outdoor_waypoint_nav)
+project(gps_waypoint_nav)
 
 set(CMAKE_CXX_FLAGS "-std=c++11")
 set(CMAKE_CXX_STANDARD 11)
