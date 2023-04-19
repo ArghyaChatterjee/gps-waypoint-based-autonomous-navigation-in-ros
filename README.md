@@ -1,7 +1,14 @@
 # GPS-waypoint-based-Autonomous-Navigation-in-ROS
 GPS points will be predefined for the robot to navigate to the destination avoiding obstacles.
 
-This repo package was tested on a Custom Rover with Razor 9DOF IMU, ZED F9P (RTK2) GPS, and RPLidar A1 lidar. The base station laptop is running Ubuntu 18.04 and the rover is running Ubuntu 18.04 on an Nvidia Jetson TX2. 
+This repo package was tested on:
+### Custom Rover has
+- Nvidia Jetson TX2 with Ubuntu 18.04
+- Razor 9DOF IMU, 
+- ZED F9P (RTK2) GPS, and 
+- RPLidar A1 lidar. 
+### The base station has 
+- Laptop with Ubuntu 18.04
 
 ## Motivation
 This work was performed to participate in University Rover Challenge (URC) 2019 for Team Interplanetar (BUET Mars Rover Robotics Team). Special thanks goes to Daniel Snider for open sourcing his work:
@@ -87,10 +94,10 @@ We have used mapviz package to visualize the path and the cordinates.
 
 #### Binary Install:
 ```
-sudo apt-get install ros-kinetic-mapviz \
-                       ros-kinetic-mapviz-plugins \
-                       ros-kinetic-tile-map \
-                       ros-kinetic-multires-image		       
+sudo apt-get install ros-melodic-mapviz \
+                       ros-melodic-mapviz-plugins \
+                       ros-melodic-tile-map \
+                       ros-melodic-multires-image		       
 ```
 #### Source Install:
 ```
