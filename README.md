@@ -2,6 +2,12 @@
 
 GPS points will be predefined for the robot to navigate to the destination avoiding obstacles.
 
+# Repository Workflow
+
+<p align="center">
+    <img src="assets/gps_waypoint_nav.png", width="800">
+</p>
+
 This repo package was tested on:
 ### Custom Rover has
 - Nvidia Jetson TX2 with Ubuntu 18.04
@@ -13,12 +19,12 @@ This repo package was tested on:
 
 ## Motivation
 This work was performed to participate in University Rover Challenge (URC) 2019 for Team Interplanetar (BUET Mars Rover Robotics Team). Special thanks goes to Daniel Snider for open sourcing his work:
-- ROS Rover <[code](https://github.com/danielsnider/ros-rover)>
-- Simple Drive <[code](https://github.com/danielsnider/simple_drive)> <[ROS Wiki](http://wiki.ros.org/simple_drive)>
-- Follow Waypoints <[code](https://github.com/danielsnider/follow_waypoints)> <[ROS Wiki](http://wiki.ros.org/follow_waypoints)>
-- GPS Goal <[code](https://github.com/danielsnider/gps_goal)> <[ROS Wiki](http://wiki.ros.org/gps_goal)>
-- ROS Offline Google Maps for MapViz <[code](https://github.com/danielsnider/MapViz-Tile-Map-Google-Maps-Satellite)>
-- Advanced Terminal Organization <[code1](https://github.com/teamr3/URC/blob/master/.tmuxinator.yml)> <[code2](https://github.com/teamr3/URC/blob/master/devstuff/dan/.tmuxinator.yml)>
+- ROS Rover [[code]](https://github.com/danielsnider/ros-rover)
+- Simple Drive [[code]](https://github.com/danielsnider/simple_drive) [[ROS Wiki]](http://wiki.ros.org/simple_drive)
+- Follow Waypoints [[code]](https://github.com/danielsnider/follow_waypoints) [[ROS Wiki]](http://wiki.ros.org/follow_waypoints)
+- GPS Goal [[code]](https://github.com/danielsnider/gps_goal) [[ROS Wiki]](http://wiki.ros.org/gps_goal)
+- ROS Offline Google Maps for MapViz [[code]](https://github.com/danielsnider/MapViz-Tile-Map-Google-Maps-Satellite)
+- Advanced Terminal Organization [[code1]](https://github.com/teamr3/URC/blob/master/.tmuxinator.yml) [[code2]](https://github.com/teamr3/URC/blob/master/devstuff/dan/.tmuxinator.yml)
 
 ## Run the package
 
@@ -67,18 +73,18 @@ The Navigation package within this repo includes the following custom nodes:
 
 ## Convert lattitude-longitude to local odometry message
 If you want to convert /navsat/fix topic from gps sensor to /navsat/odom topic (local cordinate frame), use these 2 packages directly:
-- Geonav Transform <[code](https://github.com/bsb808/geonav_transform)> <[ROS wiki](http://wiki.ros.org/geonav_transform)>
-- Geographic Info <[code](https://github.com/ros-geographic-info/geographic_info)> <[ROS wiki](http://wiki.ros.org/geographic_info)> <[website](http://library.isr.ist.utl.pt/docs/roswiki/navsat_odometry.html)> <[ROS wiki2](http://wiki.ros.org/navsat_odometry)>
-- Lattitude, Longitude & Altitude to Pose Stamped <[code](https://github.com/arpg/ROS-UTM-LLA)>
-- Eagle Eye for GPS & IMU Fused Odometry <[code](https://github.com/MapIV/eagleye)> <[youtube](https://www.youtube.com/watch?v=u8Nan38BkDw)>
-- IMU GPS Localization: Using EKF to fuse IMU and GPS data <[code](https://github.com/ydsf16/imu_gps_localization)>
+- Geonav Transform [[code]](https://github.com/bsb808/geonav_transform) [[ROS wiki]](http://wiki.ros.org/geonav_transform)
+- Geographic Info [[code]](https://github.com/ros-geographic-info/geographic_info) [[ROS wiki]](http://wiki.ros.org/geographic_info) [[website]](http://library.isr.ist.utl.pt/docs/roswiki/navsat_odometry.html) [[ROS wiki2]](http://wiki.ros.org/navsat_odometry)
+- Lattitude, Longitude & Altitude to Pose Stamped [[code]](https://github.com/arpg/ROS-UTM-LLA)
+- Eagle Eye for GPS & IMU Fused Odometry [[code]](https://github.com/MapIV/eagleye) [[youtube]](https://www.youtube.com/watch?v=u8Nan38BkDw)
+- IMU GPS Localization: Using EKF to fuse IMU and GPS data [[code]](https://github.com/ydsf16/imu_gps_localization)
 
 
 ## Details Understanding of the package
 - [ROS Extra Class #2: How to use GPS to do autonomous robot navigation?](https://www.youtube.com/watch?v=cmOplaq8cHc)
 
-## GPS related ros drivers
-- GPSD <[code](https://github.com/ros-drivers/gps_umd)> <[ROS Tutorial](https://wiki.ros.org/gpsd_client/Tutorials/)>
+## GPS-related ros drivers
+- GPSD [[code]](https://github.com/ros-drivers/gps_umd) [[ROS Tutorial]](https://wiki.ros.org/gpsd_client/Tutorials/)
 
 ## Related Issues
 - [Robot localization navsat transform node does not publish](https://answers.ros.org/question/332905/robot_localization-navsat-transform-node-does-not-publish/)
@@ -87,7 +93,7 @@ If you want to convert /navsat/fix topic from gps sensor to /navsat/odom topic (
 - [GPS navigation with mobile robot](https://question2738.rssing.com/chan-42656520/all_p5.html)
 
 ## Related Implementation to ROS robot
-- Robot Localization using GPS <[website](https://wiki.nps.edu/display/RC/Localization+using+GPS%2C+IMU+and+robot_localization)>
+- Robot Localization using GPS [[website]](https://wiki.nps.edu/display/RC/Localization+using+GPS%2C+IMU+and+robot_localization)
 
 ## User Interface Demo
 ### Mapviz package
@@ -209,14 +215,7 @@ Go to http://localhost:8888 (in case in a robot http://your-robot-ip:8888/) on y
 </p>
 
 
-# Gratitude
-  I would like to acknowledge the contribution of the websites which helped me while making this repo.
-  - https://github.com/nickcharron
-  - https://github.com/clearpathrobotics
-  - https://github.com/swri-robotics
-  - https://github.com/danielsnider/follow_waypoints
-  - https://github.com/ros-geographic-info
-  - https://github.com/nobleo/rviz_satellite
-  - https://github.com/dheera/rosboard
+# Acknowledgement 
+I would like to acknowledge the contribution of the previous work [nickcharron](https://github.com/nickcharron), [clearpathrobotics](https://github.com/clearpathrobotics), [swri-robotics](https://github.com/swri-robotics), [follow waypoints](https://github.com/danielsnider/follow_waypoints), [ros graphic info](https://github.com/ros-geographic-info), [rviz satellite](https://github.com/nobleo/rviz_satellite), [rosbaord](https://github.com/dheera/rosboard)
 
 
